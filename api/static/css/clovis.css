@@ -1,0 +1,106 @@
+@keyframes inicio {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+label {
+    color: #007bff;
+    font-style: oblique;
+    font-weight: bold;
+}
+hr {
+    background-color: rgb(25, 215, 248);
+}
+input {
+    width: 230px;
+    border: none;
+    border-bottom: solid grey 0.5px;
+    background-color: transparent;
+    outline: none;
+    transition: border, width, 500ms ease;
+}
+input:active {
+    border-bottom: solid black 0.8px;
+}
+input:hover {
+    width: 250px;
+    border-bottom: solid #007bff 0.8px;
+}
+img {
+    width: 30px;
+    height: auto;
+}
+.list {
+    border: none;
+    background-color: transparent;
+    transition: background-color 500ms ease;
+}
+.list:hover {
+    background-color: rgba(0, 0, 0, 0.2);   
+}
+.alinhamento_employees {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+.grid1 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.label_visible {
+    animation: inicio 1.5s ease;
+    opacity: 1;
+}
+.jumbotron {
+    border: solid rgb(25, 215, 248) 1px;
+}
+.hr-vertical {
+    height: 500px;
+    border-left: 2px solid;
+}
+.alinhamento {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+#img_remove {
+    padding-left: 150%;
+}
+#imgs_remove {
+    padding-right: 150%;
+}
+#new {
+    background-color: #fff;
+    color: #007bff;
+    border: solid #007bff 2px;
+    transition: color, background-color, 500ms ease ;
+}
+#new:hover {
+    color : #fff;
+    background-color: #007bff;
+}
+#b_salvar {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s
+}

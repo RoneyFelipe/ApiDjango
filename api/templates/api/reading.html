@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/clovis.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Employees List</title>
+</head>
+<body>
+    <section class='label_visible'>
+        <div class="container">
+            <div class="col-md-10 offset-md-1 mt-5">
+                <div class="jumbotron">
+                    <h1 class="display-4">Employee Register</h1>
+                    <p class="lead font-italic">SSYS Employees Control</p>
+                    <hr class="my-4">
+                    <table class="table table-border-less">
+                        <tr>
+                            <td>Name</td>
+                            <td>E-mail</td>
+                            <td>Department</td>
+                            <td><a id='new' class="btn btn-primary" href="{%url 'url_create'%}">+Add New</a></td>
+                        </tr>
+                        {%for Employee in Employees%}
+                            <tr class=list>
+                                <td>{{ Employee.nome }}</td>
+                                <td>{{ Employee.email }}</td>
+                                <td>{{ Employee.department }}</td>
+                                <td><a href="{% url 'url_update' Employee.id%}"><i class="far fa-edit"></i></a></td>
+                                <td><a class="imgs_remove" href="{% url 'url_delete' Employee.id %}"><i class="fas fa-user-minus"></i></a></td>
+                            </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>
